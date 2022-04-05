@@ -1,0 +1,11 @@
+[package]
+name = "hello-rust2"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+movies_lib = { path = "../movie_lib" }
+w1_lib = { path = "../move/w1_lib" }
+rand = "0.6.5"
