@@ -153,15 +153,17 @@ iter_mut()	返回一个可修改可重入迭代器，迭代器元素的类型为
     */
 }
 
-
-// 导入当前项目下的 rand 第三方库
+use rand::Rng;
 
 // cargo 管理 猜数字游戏 
 fn game() {
     println!("Welcome to no guessing game");
-
+    
+    let mut rng = rand::thread_rng();
     let correct: u8 = random();
-    println!("correct value is {}", correct);
+    // 指定范围  u8 256
+    let correct : u8 = rng.gen_range(60, 101);    
+    println!("u8类型 最大:256 correct value is {}", correct);
     loop {
         let guess = get_guess();
         if handle_guess(guess, correct) {
